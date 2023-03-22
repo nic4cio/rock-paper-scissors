@@ -34,9 +34,9 @@ function getPlayerChoice()
 function playRound(playerSelection, computerSelection)
 {
     let player = playerSelection;
-    // console.log(player)
+    console.log(player)
     let computer = computerSelection;
-    // console.log(computer)
+    console.log(computer)
     let string;
 
     if (player === computer){
@@ -59,6 +59,7 @@ function playRound(playerSelection, computerSelection)
         return string;
     } else if (player === "PAPER" && computer === "ROCK"){
         string = "You Won! Paper beats Rock";
+        return string;
     }
 }
 

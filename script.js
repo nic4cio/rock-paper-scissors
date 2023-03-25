@@ -59,6 +59,7 @@ function playRound(playerSelection, computerSelection)
         return string;
     } else if (player === "PAPER" && computer === "ROCK"){
         string = "You Won! Paper beats Rock";
+        return string;
     }
 }
 

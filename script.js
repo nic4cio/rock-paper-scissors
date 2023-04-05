@@ -64,14 +64,10 @@ function playRound(playerSelection, computerSelection)
 }
 
 
+
+
 function game()
 {
-    // loop of 5 rounds
-    for (let i=0; i < 5; i++){
-        let playerChoice = getPlayerChoice();
-        let computerChoice = getComputerChoice();
-        window.alert(playRound(playerChoice, computerChoice));
-    }
 }
 
 game();

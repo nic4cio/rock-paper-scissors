@@ -2,41 +2,46 @@
 
 function getComputerChoice()
 {
-    // function to get computer's random choice
-    // array with possible choices
     let choices = ["ROCK", "PAPER", "SCISSORS"];
-    // the choice will be randomly chosen 
     let theChoice = choices[Math.floor(Math.random() * choices.length)];
-    // then the function returns the randomly chosen choice by the computer
     return theChoice;
 }
 
+
 function getPlayerChoice()
 {
-    // function to the get the player's choice
-    // get the Player choice with prompt
-    let receivedPlayerChoice = prompt("Rock, Paper or Scissors?");
-    // console.log(receivedPlayerChoice);
-    // treat the choice and transform to upper case
-    let treatedChoice = receivedPlayerChoice.toUpperCase();
-    // console.log(treatedChoice);
-    // possible choices by the player
-    // if the choice Isn't satisfied, the function getPlayerChoice runs again
-    if(treatedChoice === "ROCK" || treatedChoice === "PAPER" || treatedChoice === "SCISSORS")
-    {
-        return treatedChoice;
-    } else {
-        alert("Choose between Rock, Paper or Scissors");
-        getPlayerChoice();
-    }
+    let playerChoice;
+    let result;
+    const rock = document.querySelector('#rock');
+    const paper = document.querySelector('#paper');
+    const scissors = document.querySelector('#scissors');
+
+    rock.addEventListener('click', () => {
+        playerChoice = "ROCK";
+        result = playRound(playerChoice, getComputerChoice())
+        console.log(result);
+    })
+
+    paper.addEventListener('click', () => {
+        playerChoice = "PAPER";
+        result = playRound(playerChoice, getComputerChoice())
+        console.log(result);
+    })
+
+    scissors.addEventListener('click', () => {
+        playerChoice = "SCISSORS";
+        result = playRound(playerChoice, getComputerChoice())
+        console.log(result);
+    })
+
 }
 
 function playRound(playerSelection, computerSelection)
 {
     let player = playerSelection;
-    // console.log(player)
+    console.log(player)
     let computer = computerSelection;
-    // console.log(computer)
+    console.log(computer)
     let string;
 
     if (player === computer){
@@ -63,11 +68,9 @@ function playRound(playerSelection, computerSelection)
     }
 }
 
-
-
-
 function game()
 {
+    getPlayerChoice();
 }
 
 game();

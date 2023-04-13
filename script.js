@@ -15,56 +15,74 @@ function getPlayerChoice()
     const rock = document.querySelector('#rock');
     const paper = document.querySelector('#paper');
     const scissors = document.querySelector('#scissors');
+    const winnerMessage = document.querySelector('#winner-message');
+
+    winnerMessage.style.color = 'blue'
 
     rock.addEventListener('click', () => {
         playerChoice = "ROCK";
         result = playRound(playerChoice, getComputerChoice())
         console.log(result);
+        winnerMessage.textContent = result[0];
     })
 
     paper.addEventListener('click', () => {
         playerChoice = "PAPER";
         result = playRound(playerChoice, getComputerChoice())
         console.log(result);
+        winnerMessage.textContent = result[0];
     })
 
     scissors.addEventListener('click', () => {
         playerChoice = "SCISSORS";
         result = playRound(playerChoice, getComputerChoice())
         console.log(result);
+        winnerMessage.textContent = result[0];
     })
-
 }
 
 function playRound(playerSelection, computerSelection)
 {
+    let playerScore;
+    let computerScore;
+    let string;
+
     let player = playerSelection;
     console.log(player)
+
     let computer = computerSelection;
     console.log(computer)
-    let string;
+
+    let resultArray = [string, playerScore, computerScore]
 
     if (player === computer){
         string = "Tied Game!";
-        return string;
+        resultArray[0] = string;
+        return resultArray;
     } else if (player === "ROCK" && computer === "SCISSORS") {
-        string = "You Won! Rock beats Scissors";
-        return string;
+        string = "Rock beats Scissors";
+        resultArray[0] = string;
+        return resultArray;
     } else if (player === "ROCK" && computer === "PAPER"){
-        string = "You Lose! Paper beats Rock";
-        return string;
+        string = "Paper beats Rock";
+        resultArray[0] = string;
+        return resultArray;
     } else if (player === "SCISSORS" && computer === "ROCK"){
-        string = "You Lose! Rock beats Scissors";
-        return string;
+        string = "Rock beats Scissors";
+        resultArray[0] = string;
+        return resultArray;
     } else if (player === "SCISSORS" && computer === "PAPER"){
-        string = "You Won! Scissors beats Paper";
-        return string;
+        string = "Scissors beats Paper";
+        resultArray[0] = string;
+        return resultArray;
     } else if (player === "PAPER" && computer === "SCISSORS"){
-        string = "You lost! Scissors beats Paper";
-        return string;
+        string = "Scissors beats Paper";
+        resultArray[0] = string;
+        return resultArray;
     } else if (player === "PAPER" && computer === "ROCK"){
-        string = "You Won! Paper beats Rock";
-        return string;
+        string = "Paper beats Rock";
+        resultArray[0] = string;
+        return resultArray;
     }
 }
 
@@ -74,4 +92,3 @@ function game()
 }
 
 game();
-

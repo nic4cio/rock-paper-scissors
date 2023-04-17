@@ -7,14 +7,22 @@ function getComputerChoice()
     return theChoice;
 }
 
+function getWinner(playerScore, computerScore)
+{
+    return playerScore == 5 ? "You win!" :
+    computerScore == 5 ? "Computer wins!": " "
+}
+
 
 function getPlayerChoice()
 {
     let playerChoice;
-    let result;
 
     let playerScoreCounter = 0;
     let computerScoreCounter = 0;
+
+    let result;
+
 
     const rock = document.querySelector('#rock');
     const paper = document.querySelector('#paper');
@@ -22,8 +30,11 @@ function getPlayerChoice()
     const winnerMessage = document.querySelector('#winner-message');
     const playerScore = document.querySelector('#player-score');
     const computerScore = document.querySelector('#computer-score');
+    const finalResult = document.querySelector('#final-result');
 
-    winnerMessage.style.color = 'blue'
+    
+
+    winnerMessage.style.color = 'blue';
 
     rock.addEventListener('click', () => {
         playerChoice = "ROCK";
@@ -39,6 +50,7 @@ function getPlayerChoice()
         winnerMessage.textContent = result[0];
         playerScore.textContent = playerScoreCounter;
         computerScore.textContent = computerScoreCounter;
+        finalResult.textContent = getWinner(playerScoreCounter, computerScoreCounter);
     })
 
     paper.addEventListener('click', () => {
@@ -55,6 +67,7 @@ function getPlayerChoice()
         winnerMessage.textContent = result[0];
         playerScore.textContent = playerScoreCounter;
         computerScore.textContent = computerScoreCounter;
+        finalResult.textContent = getWinner(playerScoreCounter, computerScoreCounter);
     })
 
     scissors.addEventListener('click', () => {
@@ -71,7 +84,10 @@ function getPlayerChoice()
         winnerMessage.textContent = result[0];
         playerScore.textContent = playerScoreCounter;
         computerScore.textContent = computerScoreCounter;
+        finalResult.textContent = getWinner(playerScoreCounter, computerScoreCounter);
     })
+
+
 }
 
 function playRound(playerSelection, computerSelection)

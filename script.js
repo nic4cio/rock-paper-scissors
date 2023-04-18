@@ -46,6 +46,11 @@ function getPlayerChoice()
         computerScoreCounter += result[2];
 
         console.log(playerScoreCounter, computerScoreCounter);
+        if(playerScoreCounter > 5 || computerScoreCounter > 5){
+            playerScoreCounter = 0;
+            computerScoreCounter = 0;
+            result[0] = " ";
+        } 
 
         winnerMessage.textContent = result[0];
         playerScore.textContent = playerScoreCounter;
@@ -63,6 +68,11 @@ function getPlayerChoice()
         computerScoreCounter += result[2];
 
         console.log(playerScoreCounter, computerScoreCounter);
+        if(playerScoreCounter > 5 || computerScoreCounter > 5){
+            playerScoreCounter = 0;
+            computerScoreCounter = 0;
+            result[0] = " ";
+        } 
 
         winnerMessage.textContent = result[0];
         playerScore.textContent = playerScoreCounter;
@@ -80,6 +90,11 @@ function getPlayerChoice()
         computerScoreCounter += result[2];
 
         console.log(playerScoreCounter, computerScoreCounter);
+        if(playerScoreCounter > 5 || computerScoreCounter > 5){
+            playerScoreCounter = 0;
+            computerScoreCounter = 0;
+            result[0] = " ";
+        } 
 
         winnerMessage.textContent = result[0];
         playerScore.textContent = playerScoreCounter;
